@@ -36,7 +36,7 @@
             <input class="header-search-input mt-4 mb-2" type="text" name="Search" placeholder="Search Messages">
             <ul class="collection right-sidebar-chat p-0 mb-0">
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-                <span class="avatar-status avatar-online avatar-50"><img src="../../../app-assets/images/avatar/avatar-7.png" alt="avatar">
+                <span class="avatar-status avatar-online avatar-50"><img src="assets/images/avatar/avatar-7.png" alt="avatar">
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -46,7 +46,7 @@
                 <span class="secondary-content medium-small">5.00 AM</span>
               </li>
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-                <span class="avatar-status avatar-online avatar-50"><img src="../../../app-assets/images/avatar/avatar-1.png" alt="avatar">
+                <span class="avatar-status avatar-online avatar-50"><img src="assets/images/avatar/avatar-1.png" alt="avatar">
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -56,7 +56,7 @@
                 <span class="secondary-content medium-small">4.14 AM</span>
               </li>
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-                <span class="avatar-status avatar-off avatar-50"><img src="../../../app-assets/images/avatar/avatar-2.png" alt="avatar">
+                <span class="avatar-status avatar-off avatar-50"><img src="assets/images/avatar/avatar-2.png" alt="avatar">
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -66,7 +66,7 @@
                 <span class="secondary-content medium-small">4.14 AM</span>
               </li>
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-                <span class="avatar-status avatar-online avatar-50"><img src="../../../app-assets/images/avatar/avatar-3.png" alt="avatar">
+                <span class="avatar-status avatar-online avatar-50"><img src="assets/images/avatar/avatar-3.png" alt="avatar">
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -76,7 +76,7 @@
                 <span class="secondary-content medium-small">9.00 PM</span>
               </li>
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-                <span class="avatar-status avatar-online avatar-50"><img src="../../../app-assets/images/avatar/avatar-4.png" alt="avatar">
+                <span class="avatar-status avatar-online avatar-50"><img src="assets/images/avatar/avatar-4.png" alt="avatar">
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -86,7 +86,7 @@
                 <span class="secondary-content medium-small">4.14 AM</span>
               </li>
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-                <span class="avatar-status avatar-off avatar-50"><img src="../../../app-assets/images/avatar/avatar-5.png" alt="avatar">
+                <span class="avatar-status avatar-off avatar-50"><img src="assets/images/avatar/avatar-5.png" alt="avatar">
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -96,7 +96,7 @@
                 <span class="secondary-content medium-small">5.15 PM</span>
               </li>
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-                <span class="avatar-status avatar-online avatar-50"><img src="../../../app-assets/images/avatar/avatar-6.png" alt="avatar">
+                <span class="avatar-status avatar-online avatar-50"><img src="assets/images/avatar/avatar-6.png" alt="avatar">
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -106,7 +106,7 @@
                 <span class="secondary-content medium-small">8.00 AM</span>
               </li>
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-                <span class="avatar-status avatar-off avatar-50"><img src="../../../app-assets/images/avatar/avatar-7.png" alt="avatar">
+                <span class="avatar-status avatar-off avatar-50"><img src="assets/images/avatar/avatar-7.png" alt="avatar">
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -116,7 +116,7 @@
                 <span class="secondary-content medium-small">9.53 PM</span>
               </li>
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-                <span class="avatar-status avatar-off avatar-50"><img src="../../../app-assets/images/avatar/avatar-8.png" alt="avatar">
+                <span class="avatar-status avatar-off avatar-50"><img src="assets/images/avatar/avatar-8.png" alt="avatar">
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -126,7 +126,7 @@
                 <span class="secondary-content medium-small">4.20 AM</span>
               </li>
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-                <span class="avatar-status avatar-online avatar-50"><img src="../../../app-assets/images/avatar/avatar-1.png" alt="avatar">
+                <span class="avatar-status avatar-online avatar-50"><img src="assets/images/avatar/avatar-1.png" alt="avatar">
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -136,7 +136,7 @@
                 <span class="secondary-content medium-small">5.20 AM</span>
               </li>
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-                <span class="avatar-status avatar-online avatar-50"><img src="../../../app-assets/images/avatar/avatar-9.png" alt="avatar">
+                <span class="avatar-status avatar-online avatar-50"><img src="assets/images/avatar/avatar-9.png" alt="avatar">
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -146,7 +146,7 @@
                 <span class="secondary-content medium-small">12.00 AM</span>
               </li>
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-                <span class="avatar-status avatar-off avatar-50"><img src="../../../app-assets/images/avatar/avatar-10.png" alt="avatar">
+                <span class="avatar-status avatar-off avatar-50"><img src="assets/images/avatar/avatar-10.png" alt="avatar">
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -156,7 +156,7 @@
                 <span class="secondary-content medium-small">11.14 PM</span>
               </li>
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-                <span class="avatar-status avatar-off avatar-50"><img src="../../../app-assets/images/avatar/avatar-11.png" alt="avatar">
+                <span class="avatar-status avatar-off avatar-50"><img src="assets/images/avatar/avatar-11.png" alt="avatar">
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -166,7 +166,7 @@
                 <span class="secondary-content medium-small">7.30 PM</span>
               </li>
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-                <span class="avatar-status avatar-online avatar-50"><img src="../../../app-assets/images/avatar/avatar-12.png" alt="avatar">
+                <span class="avatar-status avatar-online avatar-50"><img src="assets/images/avatar/avatar-12.png" alt="avatar">
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -328,7 +328,7 @@
                 <h6 class="timeline-title">12 new users registered</h6>
                 <p class="timeline-text">Here are some news feed interactions concepts.</p>
                 <div class="timeline-content">
-                  <img src="../../../app-assets/images/icon/pdf.png" alt="document" height="30" width="25" class="mr-1">Registration.doc
+                  <img src="assets/images/icon/pdf.png" alt="document" height="30" width="25" class="mr-1">Registration.doc
                 </div>
               </li>
               <li class="timeline-items timeline-icon-indigo active">
@@ -336,7 +336,7 @@
                 <h6 class="timeline-title">Tina is attending your activity</h6>
                 <p class="timeline-text">Here are some news feed interactions concepts.</p>
                 <div class="timeline-content">
-                  <img src="../../../app-assets/images/icon/pdf.png" alt="document" height="30" width="25" class="mr-1">Activity.doc
+                  <img src="assets/images/icon/pdf.png" alt="document" height="30" width="25" class="mr-1">Activity.doc
                 </div>
               </li>
               <li class="timeline-items timeline-icon-orange">
@@ -365,7 +365,7 @@
                 <h6 class="timeline-title">Database overloaded 89%</h6>
                 <p class="timeline-text">Here are some news feed interactions concepts.</p>
                 <div class="timeline-content">
-                  <img src="../../../app-assets/images/icon/pdf.png" alt="document" height="30" width="25" class="mr-1">Database-log.doc
+                  <img src="assets/images/icon/pdf.png" alt="document" height="30" width="25" class="mr-1">Database-log.doc
                 </div>
               </li>
             </ul>
@@ -398,7 +398,7 @@
     <li class="chat-body">
       <ul class="collection">
         <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-          <span class="avatar-status avatar-online avatar-50"><img src="../../../app-assets/images/avatar/avatar-7.png" alt="avatar">
+          <span class="avatar-status avatar-online avatar-50"><img src="assets/images/avatar/avatar-7.png" alt="avatar">
           </span>
           <div class="user-content speech-bubble">
             <p class="medium-small">hello!</p>
@@ -410,7 +410,7 @@
           </div>
         </li>
         <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-          <span class="avatar-status avatar-online avatar-50"><img src="../../../app-assets/images/avatar/avatar-7.png" alt="avatar">
+          <span class="avatar-status avatar-online avatar-50"><img src="assets/images/avatar/avatar-7.png" alt="avatar">
           </span>
           <div class="user-content speech-bubble">
             <p class="medium-small">I am looking for the best admin template.?</p>
@@ -427,7 +427,7 @@
         </li>
 
         <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-          <span class="avatar-status avatar-online avatar-50"><img src="../../../app-assets/images/avatar/avatar-7.png" alt="avatar">
+          <span class="avatar-status avatar-online avatar-50"><img src="assets/images/avatar/avatar-7.png" alt="avatar">
           </span>
           <div class="user-content speech-bubble">
             <p class="medium-small">Ohh! very nice</p>
@@ -439,7 +439,7 @@
           </div>
         </li>
         <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-          <span class="avatar-status avatar-online avatar-50"><img src="../../../app-assets/images/avatar/avatar-7.png" alt="avatar">
+          <span class="avatar-status avatar-online avatar-50"><img src="assets/images/avatar/avatar-7.png" alt="avatar">
           </span>
           <div class="user-content speech-bubble">
             <p class="medium-small">How can I purchase it?</p>
@@ -461,14 +461,14 @@
           </div>
         </li>
         <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-          <span class="avatar-status avatar-online avatar-50"><img src="../../../app-assets/images/avatar/avatar-7.png" alt="avatar">
+          <span class="avatar-status avatar-online avatar-50"><img src="assets/images/avatar/avatar-7.png" alt="avatar">
           </span>
           <div class="user-content speech-bubble">
             <p class="medium-small">Ohh! Thank you.</p>
           </div>
         </li>
         <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-          <span class="avatar-status avatar-online avatar-50"><img src="../../../app-assets/images/avatar/avatar-7.png" alt="avatar">
+          <span class="avatar-status avatar-online avatar-50"><img src="assets/images/avatar/avatar-7.png" alt="avatar">
           </span>
           <div class="user-content speech-bubble">
             <p class="medium-small">I will purchase it for sure.</p>
