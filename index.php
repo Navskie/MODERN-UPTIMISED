@@ -2,20 +2,16 @@
   include 'include/header.php';
   include 'include/sidebar.php';
 ?>
+
   <div id="main">
     <div class="container">
       <div class="row">
 
-        <div class="col s12 l9">
-          <div class="card recent-buyers-card animate fadeUp">
-            <div class="card-content">
-              aasdasdasdas ka kier
-            </div>
-          </div>
-        </div>
+        <!-- Sales Count ###### include/sales-count.php -->
+        <?php require_once 'include/sales-count.php'; ?>
+        <!-- Sales Count End ###### -->
 
-
-        <div class="col s12 l3">
+        <div class="col s12 l4">
           <!-- Recent Buyers -->
           <div class="card recent-buyers-card animate fadeUp">
               <div class="card-content">
@@ -95,6 +91,8 @@
               </div>
           </div>
         </div>
+
+
       </div>
     </div>
   </div>

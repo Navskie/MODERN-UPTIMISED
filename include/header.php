@@ -1,4 +1,6 @@
-<?php include 'connection/db.php'; ?>
+<?php 
+  include 'resource/connect.php'; 
+?>
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
   <!-- BEGIN: Head-->
