@@ -9,7 +9,7 @@
         <div class="col s12 l9">
           <div class="card recent-buyers-card animate fadeUp">
             <div class="card-content">
-              asd
+              aasdasdasdas
             </div>
           </div>
         </div>
