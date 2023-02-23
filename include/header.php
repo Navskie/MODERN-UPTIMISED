@@ -20,6 +20,8 @@
     <link rel="stylesheet" type="text/css" href="assets/vendors/animate-css/animate.css">
     <link rel="stylesheet" type="text/css" href="assets/vendors/chartist-js/chartist.min.css">
     <link rel="stylesheet" type="text/css" href="assets/vendors/chartist-js/chartist-plugin-tooltip.css">
+    <link rel="stylesheet" href="assets/vendors/select2/select2.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/vendors/select2/select2-materialize.css" type="text/css">
     <!-- END: VENDOR CSS-->
     <!-- BEGIN: Page Level CSS-->
     <link rel="stylesheet" type="text/css" href="assets/css/themes/vertical-dark-menu-template/materialize.min.css">
