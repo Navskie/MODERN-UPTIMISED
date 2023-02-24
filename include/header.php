@@ -22,16 +22,26 @@
     <link rel="stylesheet" type="text/css" href="assets/vendors/chartist-js/chartist-plugin-tooltip.css">
     <link rel="stylesheet" href="assets/vendors/select2/select2.min.css" type="text/css">
     <link rel="stylesheet" href="assets/vendors/select2/select2-materialize.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="assets/vendors/data-tables/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendors/data-tables/extensions/responsive/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendors/data-tables/css/select.dataTables.min.css">
     <!-- END: VENDOR CSS-->
     <!-- BEGIN: Page Level CSS-->
     <link rel="stylesheet" type="text/css" href="assets/css/themes/vertical-dark-menu-template/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/themes/vertical-dark-menu-template/style.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/pages/app-invoice.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/pages/dashboard-modern.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/pages/data-tables.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/pages/intro.min.css">
     <!-- END: Page Level CSS-->
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="assets/css/custom/custom.css">
     <!-- END: Custom CSS-->
+    <style>
+      table.dataTable.dtr-inline.collapsed>tbody>tr[role=row]>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr[role=row]>th:first-child:before {
+        top: 9px !important;
+      }
+    </style>
   </head>
   <!-- END: Head-->
   <body class="vertical-layout page-header-light vertical-menu-collapsible vertical-dark-menu preload-transitions 2-columns   " data-open="click" data-menu="vertical-dark-menu" data-col="2-columns">
