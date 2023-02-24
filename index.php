@@ -8,7 +8,7 @@
       <div class="row">
 
         <!-- Sales Count ###### include/sales-count.php -->
-        <?php require_once 'include/sales-count.php'; ?>
+        <?php //require_once 'include/sales-count.php'; ?>
         <!-- Sales Count End ###### -->
 
         <div class="col s12 l4">

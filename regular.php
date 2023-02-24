@@ -59,21 +59,48 @@
 
                   <div class="col s12 m6 l4">
                     <div class="input-field">
-                      <select class="select2-customize-result browser-default" multiple="multiple"
-                        id="select2-customize-result">
-                        <optgroup label="Category">
-                          <option value="romboid">Romboid</option>
-                          <option value="trapeze">Trapeze</option>
-                          <option value="triangle">Triangle</option>
-                          <option value="polygon">Polygon</option>
-                          <option value="red">Red</option>
-                          <option value="green">Green</option>
-                          <option value="blue">Blue</option>
-                          <option value="purple">Purple</option>
-                        </optgroup>
-                      </select>
+                      <!-- <h6>Small</h6> -->
+                      <div class="input-field">
+                        <select class="select2-size-sm browser-default" id="small-select">
+                          <option value="">Select Category</option>
+                          <option value="rectangle">Rectangle</option>
+                        </select>
+                      </div>
                     </div>
                   </div>
+
+
+
+                  <div class="col s12 m6 l4">
+                    <div class="input-field">
+                      <!-- <h6>Small</h6> -->
+                      <div class="input-field">
+                        <select class="select2-size-sm2 browser-default" id="small-select2">
+                          <option value="">Select Category</option>
+                          <option value="rectangle">Rectangle</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+                  <div class="col s12 m6 l4">
+                    <div class="input-field">
+                      <!-- <h6>Small</h6> -->
+                      <div class="input-field">
+                        <select class="select2-size-sm3 browser-default" id="small-select3">
+                          <option value="">Select Category</option>
+                          <option value="rectangle">Rectangle</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
                 </div>
               </div>
             </div>
