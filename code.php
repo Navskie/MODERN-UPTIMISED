@@ -35,6 +35,7 @@
             <?php
                   if (isset($_POST['save'])) {
                     $code_name = $_POST['code_name'];
+                    $code_category = $_POST['category'];
 
                     if ($code_name != '') {
                       $item_code_check = mysqli_query($connect, "SELECT * FROM code WHERE code_name = '$code_name'");
@@ -42,9 +43,11 @@
                       if (mysqli_num_rows($item_code_check) < 1) {
                         $items_encoded = mysqli_query($connect, "INSERT INTO code (
                           code_name,
+                          code_category,
                           code_stamp
                         ) VALUES (
                           '$code_name',
+                          '$code_category',
                           '$stamp'
                         )");
                       } else {
@@ -90,6 +93,20 @@
 
 
 
+                  <div class="col s12 m6 l12">
+                    <div class="input-field">
+                      <!-- <h6>Small</h6> -->
+                      <div class="input-field">
+                        <select class="select2-size-sm1 browser-default" id="small-select" name="category">
+                          <option value="">Select Category</option>
+                          <option value="REGULAR">REGULAR</option>
+                          <option value="BUNDLE">BUNDLE</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+
 
                   <div class="col s12 m12 l12">
                     <div class="input-field">
@@ -127,36 +144,49 @@
                 <div class="row">
                   <div class="col s12">
 
-                        <h4 class="card-title">Regular Item List</h4>
+                        <!-- <h4 class="card-title">Regular Item List</h4> -->
                         <div class="row">
                           <div class="col s12">
                             <table id="page-length-option" class="display">
                               <thead>
                                 <tr>
+                                  <th>#</th>
                                   <th>Code</th>
+                                  <th>Category</th>
                                   <th>Date Added</th>
                                   <th>Action</th>
                                 </tr>
                               </thead>
                               <tbody>
                                 <?php
+                                  $number = 1;
                                   $code_data = mysqli_query($connect, "SELECT * FROM code ORDER BY id DESC");
                                   foreach ($code_data as $data) {
+                                    if ($data['code_category'] == 'BUNDLE') {
+                                      $class = 'badge red';
+                                    } else {
+                                      $class = 'badge blue';
+                                    }
                                 ?>
                                 <tr>
+                                  <td><?php echo $number ?></td>
                                   <td><?php echo $data['code_name'] ?></td>
+                                  <td><span class="<?php echo $class ?>"><?php echo $data['code_category'] ?></span></td>
                                   <td><?php echo $data['code_stamp'] ?></td>
                                   <td>
                                     <a href="code-setting.php?code_name=<?php echo $data['code_name'] ?>" class="btn waves-effect waves-light orange darken-1">Settings</a>
                                   </td>
                                 </tr>
                                 <?php 
+                                  $number++;
                                   }
                                 ?>
                               </tbody>
                               <tfoot>
                                 <tr>
+                                  <th>#</th>
                                   <th>Code</th>
+                                  <th>Category</th>
                                   <th>Date Added</th>
                                   <th>Action</th>
                                 </tr>

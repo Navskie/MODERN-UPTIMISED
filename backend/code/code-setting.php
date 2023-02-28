@@ -6,11 +6,13 @@
 
   if (isset($_POST['save'])) {
     $code_name = $_POST['code_name'];
+    $code_category = $_POST['category'];
 
     if ($code_name != '') {
      
           $code_encoded_sql = "UPDATE code SET
             code_name = '$code_name',
+            code_category = '$code_category',
             code_stamp = '$stamp'
           WHERE 
             code_name = '$codename'
