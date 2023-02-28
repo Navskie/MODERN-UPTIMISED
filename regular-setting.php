@@ -14,73 +14,46 @@
           <!-- CARD -->
             <div class="card recent-buyers-card animate fadeUp">
             <?php
-                  $item_code = $_GET['item_code'];
-                  $regular_order_sql = mysqli_query($connect, "SELECT * FROM items WHERE item_code = '$item_code'");
-                  $regular_data = mysqli_fetch_array($regular_order_sql);
+              $item_code = $_GET['item_code'];
 
-                  if (isset($_POST['save'])) {
-                    $item_name = $_POST['name'];
-                    $item_point = $_POST['point'];
-                    $item_category = $_POST['category'];
-                    $item_tag = $_POST['tag'];
-                    $item_status = $_POST['status'];
-                    $item_earning = $_POST['earning'];
-
-                    if ($item_category == 'BOGO') {
-                      $item_category = 'BUY ONE GET ANY';
-                    } elseif ($item_category == 'BAGAF') {
-                      $item_category = 'BUY ANY GET ANY';
-                    } elseif ($item_category == 'B150') {
-                      $item_category = 'BUY ONE GET 50%';
-                    } elseif ($item_category == 'B170') {
-                      $item_category = 'BUY ONE GET 70%';
-                    }
-
-                    if ($item_point != '' && $item_name != '' && $item_category != '' && $item_tag != '' && $item_status != '' && $item_earning != '') {
-                     
-                          $items_encoded_sql = "UPDATE items SET
-                            item_name = '$item_name',
-                            item_points = '$item_point',
-                            item_category = '$item_category',
-                            item_tag = '$item_tag',
-                            item_status = '$item_status',
-                            item_earning = '$item_earning',
-                            item_stamp = '$stamp'
-                          WHERE 
-                            item_code = '$item_code'
-                          ";
-                          $items_encoded = mysqli_query($connect, $items_encoded_sql);
-
-                    ?>
-                        <script>window.location.href = 'regular-setting.php?item_code=<?php echo $item_code ?>';</script>
-                    <?php
-                          // header('location: regular-setting.php?item_code='.$item_code.'');
-                      
-                    } else {
-                      echo '<div class="card-alert card red lighten-5">
-                              <div class="card-content red-text">
-                                <p>System Error : All fields are required</p>
-                              </div>
-                              <button type="button" class="close red-text" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                              </button>
-                            </div>';
-                    }
-                  }
-                ?>
+              $regular_order_sql = mysqli_query($connect, "SELECT * FROM items WHERE item_code = '$item_code'");
+              $regular_data = mysqli_fetch_array($regular_order_sql);
+            ?>
               <div class="card-content">
                 <h4 class="card-title mb-0">Regular Item Information</h4>
                 <br>
                 <div class="row">
 
                   <div class="col s12 m12 l12">
-                    <form action="regular-setting.php?item_code=<?php echo $item_code ?>" method="post">
+                    <form action="backend/regular/information.php?item_code=<?php echo $item_code ?>" method="post">
                   </div>
 
                   <div class="col s12 m6 l12">
                     <div class="input-field">
                       <input placeholder="Unique Code (PN013)" id="first_name" type="text" class="validate" name="code" value="<?php echo $regular_data['item_code'] ?>" disabled>
                       <label for="first_name">Item Code</label>
+                    </div>
+                  </div>
+
+
+
+                  <div class="col s12 m6 l12">
+                    <div class="input-field">
+                      <select class="select2 browser-default" name="item_maincode">
+                        <optgroup label="Main Code">
+                          <?php if ($regular_data['item_maincode'] != '') { ?>
+                          <option value="<?php echo $regular_data['item_maincode'] ?>"><?php echo $regular_data['item_maincode'] ?></option>
+                          <?php } else { ?>
+                          <option value="">Select Main Code</option>
+                          <?php } ?>
+                          <?php
+                            $code_sql = mysqli_query($connect, "SELECT * FROM code ORDER BY id DESC");
+                            foreach ($code_sql as $code_data) {
+                          ?>
+                          <option value="<?php echo $code_data['code_name'] ?>"><?php echo $code_data['code_name'] ?></option>
+                          <?php } ?>
+                        </optgroup>
+                      </select>
                     </div>
                   </div>
 
@@ -130,6 +103,7 @@
                       <div class="input-field">
                         <select class="select2-size-sm1 browser-default" id="small-select" name="tag">
                           <option value="<?php echo $regular_data['item_tag'] ?>"><?php echo $regular_data['item_tag'] ?></option>
+                          <option value="None">None</option>
                           <option value="Best Seller">Best Seller</option>
                           <!-- <option value="Best Seller">Best Seller</option> -->
                         </select>
@@ -199,135 +173,175 @@
                 <!-- Page Length Options -->
                 <div class="row">
 
-                  <div class="col s12 m12 l4">
-                    <form action="" method="post">
+                  <div class="col s12 m12 l6">
+                    <form action="backend/regular/exclusive-item.php?item_code=<?php echo $item_code ?>" method="post">
                       <h6>Exclusive Item</h6>
                       <br>
                       <div class="input-field col s12 m6 l8">
-                        <select class="icons">
-                          <option value="" disabled selected>Choose Product</option>
-                          <option value="" data-icon="assets/images/avatar/avatar-7.png" class="circle">example 1</option>
-                          <option value="" data-icon="assets/images/avatar/avatar-5.png" class="circle">example 2</option>
-                          <option value="" data-icon="assets/images/avatar/avatar-3.png" class="circle">example 3</option>
+                        <select class="select2 browser-default" id="default-select" name="itemcode">
+                          <option value="">Select Item</option>
+                          <?php 
+                            $item_sql = mysqli_query($connect, "SELECT * FROM code WHERE code_name != '$item_code' ORDER BY id DESC");
+                            foreach ($item_sql as $data_item) {
+                          ?>
+                          <option value="<?php echo $data_item['code_name'] ?>"><?php echo $data_item['code_name'] ?></option>
+                          <?php
+                            }
+                          ?>
                         </select>
-                        <label>Item Restriction</label>
                       </div>
                       <div class="input-field col s12 m6 l4">
-                        <button class="btn waves-effect waves-light green">Add</button>
+                        <button class="btn waves-effect waves-light green" name="exclusive">Add</button>
                       </div>
                     </form>
+                      <br>
+                      <table class="Highlight bordered centered">
+                        <tr>
+                          <th>Code</th>
+                          <th>Product Name</th>
+                          <th>Action</th>
+                        </tr>
+                        
+                          <?php
+                            $exclusive_item_sql = mysqli_query($connect, "SELECT * FROM exclusive_item WHERE exclusive = '$item_code'");
+                            foreach ($exclusive_item_sql as $data_ex_item) {
+                          ?>
+                          <tr>
+                            <td><?php echo $data_ex_item['ex_code'] ?></td>
+                            <td><?php echo $data_ex_item['ex_name'] ?></td>
+                            <td>
+                              <form action="backend/regular/exclusive-item.php?item_code=<?php echo $item_code ?>&&id=<?php echo $data_ex_item['id'] ?>" method="post">
+                                <button class="btn-floating mb-1 btn-flat waves-effect waves-light pink accent-2 white-text" name="delete">
+                                  <i class="material-icons">content_cut</i>
+                                </button>
+                              </form>
+                            </td>
+                          </tr>
+                          <?php } ?>
+                        
+                      </table>
                   </div>
+
 
                   
 
-
-                  <div class="col s12 m12 l4">
-                    <form action="" method="post">
+                  <div class="col s12 m12 l6">
+                    <form action="backend/regular/exclusive-country.php?item_code=<?php echo $item_code ?>" method="post">
                       <h6>Exclusive Country</h6>
                       <br>
                       <div class="input-field col s12 m6 l8">
-                        <select class="icons">
-                          <option value="" disabled selected>Choose Country</option>
-                          <option value="" class="circle">example 1</option>
+                        <select class="select2 js-example-programmatic browser-default" id="programmatic-single" name="country">
+                          <option value="">Select Country</option>
+                          <?php
+                            $country_sql = mysqli_query($connect, "SELECT * FROM upti_country_currency");
+                            foreach ($country_sql as $data_country) {
+                          ?>
+                            <option value="<?php echo $data_country['cc_country'] ?>"><?php echo $data_country['cc_country'] ?></option>
+                          <?php } ?>
                         </select>
-                        <label>Country Restriction</label>
                       </div>
                       <div class="input-field col s12 m6 l4">
-                        <button class="btn waves-effect waves-light green">Add</button>
+                        <button class="btn waves-effect waves-light green" name="exclusive">Add</button>
                       </div>
                     </form>
+                      <br>
+                      <table class="Highlight bordered centered">
+                        <tr>
+                          <th>Product Name</th>
+                          <th>Action</th>
+                        </tr>
+
+                        <?php
+                            $exclusive_item_sql = mysqli_query($connect, "SELECT * FROM exclusive_country WHERE exclusive = '$item_code'");
+                            foreach ($exclusive_item_sql as $data_ex_item) {
+                          ?>
+                          <tr>
+                            <td><?php echo $data_ex_item['ex_country'] ?></td>
+                            <td>
+                              <form action="backend/regular/exclusive-country.php?item_code=<?php echo $item_code ?>&&id=<?php echo $data_ex_item['id'] ?>" method="post">
+                                <button class="btn-floating mb-1 btn-flat waves-effect waves-light pink accent-2 white-text" name="delete">
+                                  <i class="material-icons">content_cut</i>
+                                </button>
+                              </form>
+                            </td>
+                          </tr>
+                        <?php } ?>
+                      </table>
                   </div>
 
 
+
+                  <div class="col s12 m12 l12"><br><hr><br></div>
 
 
 
                   <div class="col s12 m12 l4">
                     <form action="" method="post">
-                      <h6>Exclusive Reseller</h6>
-                      <br>
-                      <div class="input-field col s12 m6 l8">
-                        <select class="icons">
-                          <option value="" disabled selected>Choose Product</option>
-                          <option value="" data-icon="assets/images/avatar/avatar-7.png" class="circle">example 1</option>
-                          <option value="" data-icon="assets/images/avatar/avatar-5.png" class="circle">example 2</option>
-                          <option value="" data-icon="assets/images/avatar/avatar-3.png" class="circle">example 3</option>
+                      <div class="input-field col s12 m12 l12">
+                        <select class="icons" name="country">
+                          <option value="" disabled selected>Choose Country</option>
+                          <?php
+                            $country_sql = mysqli_query($connect, "SELECT * FROM upti_country_currency");
+                            foreach ($country_sql as $data_country) {
+                          ?>
+                          <option value="<?php echo $data_country['cc_country'] ?>" class="circle"><?php echo $data_country['cc_country'] ?></option>
+                          <?php } ?>
                         </select>
-                        <label>Partner Product</label>
+                        <!-- <label>Country Restriction</label> -->
                       </div>
-                      <div class="input-field col s12 m6 l4">
-                        <button class="btn waves-effect waves-light green">Add</button>
+                      <div class="input-field col s4 m4 l4">
+                        <input placeholder="Price" id="first_name" type="text" class="validate" name="price" autocomplete="OFF">
+                        <!-- <label for="first_name">Item Name</label> -->
+                      </div>
+                      <div class="input-field col s4 m4 l4">
+                        <input placeholder="Earnings" id="first_name" type="text" class="validate" name="earning" autocomplete="OFF">
+                        <!-- <label for="first_name">Item Name</label> -->
+                      </div>
+                      <div class="input-field col s4 m4 l4">
+                        <input placeholder="Stockist" id="first_name" type="text" class="validate" name="stockist" autocomplete="OFF">
+                        <!-- <label for="first_name">Item Name</label> -->
+                      </div>
+                      <div class="input-field col s12 m12 l12">
+                        <button class="btn waves-effect waves-light right red">Submit Price</button>
                       </div>
                     </form>
                   </div>
 
-
-
-
-                  <div class="col s12 m12 l4">
+                  <div class="col s12 m12 l8">
+                  <h6>Product Price per Country</h6>
                     <br>
                     <table class="Highlight bordered centered">
                       <tr>
-                        <th>Code</th>
-                        <th>Product Name</th>
+                        <th>Country</th>
+                        <th>System Price</th>
+                        <th>Earnings</th>
+                        <th>Stockist</th>
                         <th>Action</th>
                       </tr>
+                      <?php
+                        $price_sql = mysqli_query($connect, "SELECT * FROM upti_country WHERE country_code = '$item_code'");
+                        foreach ($price_sql as $data_price) {
+                      ?>
                       <tr>
-                        <td>UP001</td>
-                        <td>Whitesahde</td>
+                        <td><?php echo $data_price['country_name'] ?></td>
+                        <td><?php echo $data_price['country_price'] ?></td>
+                        <td><?php echo $data_price['country_php'] ?></td>
+                        <td><?php echo $data_price['country_stockist'] ?></td>
                         <td>
                           <a class="btn-floating mb-1 btn-flat waves-effect waves-light pink accent-2 white-text">
                             <i class="material-icons">content_cut</i>
                           </a>
                         </td>
                       </tr>
-                    </table>
-                  </div>
-
-                  
-
-
-                  <div class="col s12 m12 l4">
-                    <br>
-                    <table class="Highlight bordered centered">
-                      <tr>
-                        <th>Country Name</th>
-                        <th>Action</th>
-                      </tr>
-                      <tr>
-                        <td>PHILIPPINES</td>
-                        <td>
-                          <a class="btn-floating mb-1 btn-flat waves-effect waves-light pink accent-2 white-text">
-                            <i class="material-icons">content_cut</i>
-                          </a>
-                        </td>
-                      </tr>
+                      <?php
+                        }
+                      ?>
                     </table>
                   </div>
 
 
 
 
-
-                  <div class="col s12 m12 l4">
-                    <br>
-                    <table class="Highlight bordered centered">
-                      <tr>
-                        <th>Code</th>
-                        <th>Reseller</th>
-                        <th>Action</th>
-                      </tr>
-                      <tr>
-                        <td>RS12</td>
-                        <td>UPTIDEMO</td>
-                        <td>
-                          <a class="btn-floating mb-1 btn-flat waves-effect waves-light pink accent-2 white-text">
-                            <i class="material-icons">content_cut</i>
-                          </a>
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
                   
                 </div>
               </div>

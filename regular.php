@@ -41,13 +41,25 @@
                     $item_tag = $_POST['tag'];
                     $item_status = $_POST['status'];
                     $item_earning = $_POST['earning'];
+                    $item_maincode = $_POST['item_maincode'];
 
-                    if ($item_code != '' && $item_point != '' && $item_name != '' && $item_category != '' && $item_tag != '' && $item_status != '' && $item_earning != '') {
-                      $item_code_check = mysqli_query($connect, "SELECT * FROM upti_code WHERE code_name = '$item_code'");
+                    if ($item_category == 'BOGO') {
+                      $item_category = 'BUY ONE GET ANY';
+                    } elseif ($item_category == 'BAGAF') {
+                      $item_category = 'BUY ANY GET ANY';
+                    } elseif ($item_category == 'B150') {
+                      $item_category = 'BUY ONE GET 50%';
+                    } elseif ($item_category == 'B170') {
+                      $item_category = 'BUY ONE GET 70%';
+                    }
+
+                    if ($item_code != '' && $item_point != '' && $item_name != '' && $item_category != '' && $item_status != '') {
+                      $item_code_check = mysqli_query($connect, "SELECT * FROM items WHERE item_code = '$item_code'");
 
                       if (mysqli_num_rows($item_code_check) < 1) {
                         $items_encoded = mysqli_query($connect, "INSERT INTO items (
                           item_code,
+                          item_maincode,
                           item_name,
                           item_points,
                           item_category,
@@ -57,6 +69,7 @@
                           item_stamp
                         ) VALUES (
                           '$item_code',
+                          '$item_maincode',
                           '$item_name',
                           '$item_point',
                           '$item_category',
@@ -98,8 +111,15 @@
 
                   <div class="col s12 m6 l12">
                     <div class="input-field">
-                      <input placeholder="Unique Code (PN013)" id="first_name" type="text" class="validate" name="code">
-                      <label for="first_name">Item Code</label>
+                      <select class="select2 browser-default" id="default-select" name="code">
+                        <option value="">Select Item Code</option>
+                        <?php
+                          $code_sql = mysqli_query($connect, "SELECT * FROM code ORDER BY id DESC");
+                          foreach ($code_sql as $code_data) {
+                        ?>
+                        <option value="<?php echo $code_data['code_name'] ?>"><?php echo $code_data['code_name'] ?></option>
+                        <?php } ?>
+                      </select>
                     </div>
                   </div>
 
@@ -107,16 +127,35 @@
 
                   <div class="col s12 m6 l12">
                     <div class="input-field">
-                      <input placeholder="Example (Vital Wash)" id="first_name" type="text" class="validate" name="name">
+                      <select class="select2 browser-default" name="item_maincode">
+                        <optgroup label="Main Code">
+                          <option value="">Select Main Code</option>
+                          <?php
+                            $code_sql = mysqli_query($connect, "SELECT * FROM code ORDER BY id DESC");
+                            foreach ($code_sql as $code_data) {
+                          ?>
+                          <option value="<?php echo $code_data['code_name'] ?>"><?php echo $code_data['code_name'] ?></option>
+                          <?php } ?>
+                        </optgroup>
+                      </select>
+                    </div>
+                  </div>
+
+
+
+                  <div class="col s12 m6 l12">
+                    <div class="input-field">
+                      <input placeholder="Example (Vital Wash)" id="first_name" type="text" class="validate" name="name" autocomplete="OFF">
                       <label for="first_name">Item Name</label>
                     </div>
                   </div>
 
 
 
+
                   <div class="col s12 m6 l12">
                     <div class="input-field">
-                      <input placeholder="Example (13)" id="first_name" type="text" class="validate" name="point">
+                      <input placeholder="Example (13)" id="first_name" type="text" class="validate" name="point" autocomplete="OFF">
                       <label for="first_name">Points</label>
                     </div>
                   </div>
@@ -140,6 +179,7 @@
                       </div>
                     </div>
                   </div>
+
 
 
 

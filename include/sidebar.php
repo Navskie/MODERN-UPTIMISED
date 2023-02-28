@@ -15,6 +15,8 @@
         <li class="bold"><a class="collapsible-header waves-effect waves-cyan " href="JavaScript:void(0)"><i class="material-icons">receipt</i><span class="menu-title" data-i18n="Invoice">Product</span></a>
           <div class="collapsible-body">
             <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+              <li><a href="code.php"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Invoice List">Code</span></a>
+              </li>
               <li><a href="regular.php"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Invoice List">Regular</span></a>
               </li>
               <li><a href="bundle.php"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Invoice List">Bundle</span></a>
