@@ -21,8 +21,6 @@
               </li>
               <li><a href="bundle.php"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Invoice List">Bundle</span></a>
               </li>
-              <li><a href="product.php"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Invoice View">Product List</span></a>
-              </li>
             </ul>
           </div>
         </li>

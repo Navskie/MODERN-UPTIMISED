@@ -131,7 +131,7 @@
                         <optgroup label="Main Code">
                           <option value="">Select Main Code</option>
                           <?php
-                            $code_sql = mysqli_query($connect, "SELECT * FROM code ORDER BY id DESC");
+                            $code_sql = mysqli_query($connect, "SELECT * FROM code WHERE code_category = 'REGULAR' ORDER BY id DESC");
                             foreach ($code_sql as $code_data) {
                           ?>
                           <option value="<?php echo $code_data['code_name'] ?>"><?php echo $code_data['code_name'] ?></option>
